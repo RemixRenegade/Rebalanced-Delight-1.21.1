@@ -2,5 +2,7 @@
   "item.rebalanceddelight.salt": "Salt",
 
   "block.rebalanceddelight.salt_block": "Block of Salt",
-  "block.rebalanceddelight.salt_gravel_ore": "Gravel Salt Ore"
+  "block.rebalanceddelight.salt_gravel_ore": "Gravel Salt Ore",
+
+  "creativetab.rebalanceddelight.rebalanced_items": "Rebalanced Delight"
 }
