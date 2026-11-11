@@ -1,6 +1,8 @@
 package net.remixrenegade.rebalanceddelight;
 
 import net.minecraft.world.item.CreativeModeTabs;
+import net.remixrenegade.rebalanceddelight.block.ModBlocks;
+import net.remixrenegade.rebalanceddelight.item.ModCreativeModeTabs;
 import net.remixrenegade.rebalanceddelight.item.ModItems;
 import org.slf4j.Logger;
 
@@ -36,7 +38,9 @@ public class RebalancedDelight {
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
 
+        ModCreativeModeTabs.register(modEventBus);
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -53,6 +57,10 @@ public class RebalancedDelight {
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.SALT);
+        }
+        if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+            event.accept(ModBlocks.SALT_BLOCK);
+            event.accept(ModBlocks.SALT_GRAVEL_ORE);
         }
     }
 
